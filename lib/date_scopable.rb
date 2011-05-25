@@ -3,7 +3,7 @@ module DateScopable
   
   included do
     ##
-    # Date Range Scopes
+    # Date Scopes
     # 
     # returns all objects created on a specific day or
     # within a specific range of days
@@ -23,7 +23,7 @@ module DateScopable
     # then, include it in your models
     #     
     #   class User < ActiveRecord::Base
-    #     include DateRanges
+    #     include DateScopable
     #     
     #     # ...
     #   end

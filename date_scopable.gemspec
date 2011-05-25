@@ -6,11 +6,11 @@ Gem::Specification.new do |s|
   s.name        = "date_scopable"
   s.version     = DateScopable::VERSION
   s.platform    = Gem::Platform::RUBY
-  s.authors     = ["TODO: Write your name"]
-  s.email       = ["TODO: Write your email address"]
+  s.authors     = ["Anton Zolotov"]
+  s.email       = ["anton@zolotov.eu"]
   s.homepage    = ""
-  s.summary     = %q{TODO: Write a gem summary}
-  s.description = %q{TODO: Write a gem description}
+  s.summary     = %q{Convenient scopes for retrieving ActiveRecord models by date}
+  s.description = %q{Convenient scopes for retrieving ActiveRecord models by date}
 
   s.rubyforge_project = "date_scopable"
 

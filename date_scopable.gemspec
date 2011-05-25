@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Anton Zolotov"]
   s.email       = ["anton@zolotov.eu"]
-  s.homepage    = ""
+  s.homepage    = "https://github.com/azolotov/date_scopable"
   s.summary     = %q{Convenient scopes for retrieving ActiveRecord models by date}
   s.description = %q{Convenient scopes for retrieving ActiveRecord models by date}
 

@@ -32,42 +32,42 @@ module DateScopable
     # Show all objects created today
     #
     scope :today, lambda {
-      where("created_at > ?", Time.now.beginning_of_day)
+      where("created_at >= ?", Time.now.beginning_of_day)
     }
 
     ##
     # Show all objects created yesterday
     #
     scope :yesterday, lambda {
-      where("created_at > ? AND created_at < ?", Date.yesterday.beginning_of_day, Date.yesterday.end_of_day)
+      where("created_at >= ? AND created_at <= ?", Date.yesterday.beginning_of_day, Date.yesterday.end_of_day)
     }
     
     ##
     # Show all objects created on a specific day
     #
     scope :on, lambda { |day|
-      where("created_at > ? AND created_At < ?", day.beginning_of_day, day.end_of_day)
+      where("created_at >= ? AND created_at <= ?", day.beginning_of_day, day.end_of_day)
     }
     
     ##
     # Show all objects created in the last seven days
     #
     scope :last_7_days, lambda {
-      where("created_at > ?", 1.week.ago.beginning_of_day)
+      where("created_at >= ?", 1.week.ago.beginning_of_day)
     }
 
     ##
     # Show all objects created last month
     #
     scope :last_month, lambda {
-      where("created_at > ?", 1.month.ago.beginning_of_day)
+      where("created_at >= ?", 1.month.ago.beginning_of_day)
     }
 
     ##
     # show all objects created between two specific days
     #
     scope :between, lambda { |start, finish|
-      where("created_at > ? AND created_at < ?", start.beginning_of_day, finish.end_of_day)
+      where("created_at >= ? AND created_at <= ?", start.beginning_of_day, finish.end_of_day)
     }
   end
   

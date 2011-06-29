@@ -13,6 +13,7 @@ module DateScopable
     #     User.on Date.parse("4/7/2011")
     #     User.last_7_days
     #     User.last_month
+    #     User.in_month_year(12,1999)
     #     User.between(Date.parse("4/1/2011"), Date.parse("4/5/2011"))
     # 
     # Usage: Ensure that the path to this module is autoloadable in
@@ -61,6 +62,13 @@ module DateScopable
     #
     scope :last_month, lambda {
       where("created_at >= ?", 1.month.ago.beginning_of_day)
+    }
+    
+    ##
+    # Show all objects created in month
+    #
+    scope :in_month_year, lambda { |month, year|
+      where("created_at > ? AND created_at < ?", Date.new(year, month, 1).beginning_of_day, (Date.new(year, month, 1).next_month-1).end_of_day)
     }
 
     ##
